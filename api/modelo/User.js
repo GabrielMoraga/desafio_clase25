@@ -1,10 +1,10 @@
 // Configuración de las conexiones a dbs
 const mongoose = require('mongoose');
+require('dotenv').config()
+const uri = process.env.MONGO_ATLAS_URL
 
-const MONGO_ATLAS_URL="mongodb+srv://gmoraga:0i9X9EXC@cluster0.jiqqhtj.mongodb.net/?retryWrites=true&w=majority"
-/
-
-mongoose.connect("mongodb+srv://gmoraga:0i9X9EXC@cluster0.jiqqhtj.mongodb.net/?retryWrites=true&w=majority")
+console.log(uri)
+mongoose.connect(uri)
 
 
 const userSchema= new mongoose.Schema(
